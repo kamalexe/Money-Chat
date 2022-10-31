@@ -23,8 +23,14 @@
     .text-muted-color{
         color:#395B64;
     }
-
-
+    .bg-glass{
+        background: rgba( 47, 19, 255, 0.4 );
+        box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+        backdrop-filter: blur( 3px );
+        -webkit-backdrop-filter: blur( 3px );
+        border-radius: 10px;
+        border: 1px solid rgba( 255, 255, 255, 0.18 );
+    }
 
 
 
@@ -48,12 +54,14 @@
                          class="rounded-circle float-left w-100 h-100"
                          src="https://mdbootstrap.com/img/Photos/Others/images/76.jpg">
                 </div>
-                <div class="" style="padding-left:1rem;">
-                    <p class="m-0 p-0">{{user.first_name}} {{user.last_name}}</p>
-                    <small class="m-0 p-0 text-muted-color">
-                        Muted text with a
-                    </small>
-                </div>
+                <a href="a">
+                    <div class="" style="padding-left:1rem;">
+                        <p class="m-0 p-0">{{user.first_name}} {{user.last_name}}</p>
+                        <small class="m-0 p-0 text-muted-color">
+                            Muted text with a
+                        </small>
+                    </div>
+                </a>
                 <div class="float-right" style="max-width:100%;min-width:40%">
                     <a class="float-right" href="#">
                         <img src="https://img.icons8.com/ios-glyphs/30/000000/circled-menu.png"/>
@@ -61,8 +69,10 @@
                     <!--<a target="_blank" href="https://icons8.com/icon/101759/circled-menu">Circled Menu icon by Icons8</a>-->
                 </div>
             </div>
-            <!--Chat List-->
+            <!--Chat List Start-->
             <div class="w-100" style="position:fixed;bottom:0px;top:5rem;overflow:scroll; height:100vh;">
+                {% for contact in contacts %}
+                {% if contact.email %}
                 <div class="mb-1 py-3 px-2">
                     <div class="float-left">
                         <div style="width:40px; height:40px; mx-2">
@@ -71,156 +81,24 @@
                                  src="https://mdbootstrap.com/img/Photos/Others/images/76.jpg">
                         </div>
                     </div>
-                    <a href="#">
+                    <a href="{{contact.username}}">
                         <div class="border-bottom border-5" style="padding-left:1rem;border-bottom-color:  #395B64;">
-                            <p class="m-0 p-0">First</p>
+                            <p class="m-0 p-0">{{contact.first_name}} {{contact.last_name}}</p>
                             <small class="m-0 p-0 text-muted-color" style="">
                                 Muted text with a
                             </small>
                         </div>
                     </a>
                 </div>
-                <div class="mb-1 py-3 px-2">
-                    <div class="float-left">
-                        <div style="width:40px; height:40px; mx-2">
-                            <img alt="..."
-                                 class="rounded-circle float-left w-100 h-100"
-                                 src="https://mdbootstrap.com/img/Photos/Others/images/76.jpg">
-                        </div>
-                    </div>
-                    <a href="#">
-                        <div class="border-bottom border-5" style="padding-left:1rem;border-bottom-color:  #395B64;">
-                            <p class="m-0 p-0">KAMAL</p>
-                            <small class="m-0 p-0 text-muted-color" style="">
-                                Muted text with a
-                            </small>
-                        </div>
-                    </a>
-                </div>
-                <div class="mb-1 py-3 px-2">
-                    <div class="float-left">
-                        <div style="width:40px; height:40px; mx-2">
-                            <img alt="..."
-                                 class="rounded-circle float-left w-100 h-100"
-                                 src="https://mdbootstrap.com/img/Photos/Others/images/76.jpg">
-                        </div>
-                    </div>
-                    <a href="#">
-                        <div class="border-bottom border-5" style="padding-left:1rem;border-bottom-color:  #395B64;">
-                            <p class="m-0 p-0">KAMAL</p>
-                            <small class="m-0 p-0 text-muted-color" style="">
-                                Muted text with a
-                            </small>
-                        </div>
-                    </a>
-                </div>
-                <div class="mb-1 py-3 px-2">
-                    <div class="float-left">
-                        <div style="width:40px; height:40px; mx-2">
-                            <img alt="..."
-                                 class="rounded-circle float-left w-100 h-100"
-                                 src="https://mdbootstrap.com/img/Photos/Others/images/76.jpg">
-                        </div>
-                    </div>
-                    <a href="#">
-                        <div class="border-bottom border-5" style="padding-left:1rem;border-bottom-color:  #395B64;">
-                            <p class="m-0 p-0">KAMAL</p>
-                            <small class="m-0 p-0 text-muted-color" style="">
-                                Muted text with a
-                            </small>
-                        </div>
-                    </a>
-                </div>
-                <div class="mb-1 py-3 px-2">
-                    <div class="float-left">
-                        <div style="width:40px; height:40px; mx-2">
-                            <img alt="..."
-                                 class="rounded-circle float-left w-100 h-100"
-                                 src="https://mdbootstrap.com/img/Photos/Others/images/76.jpg">
-                        </div>
-                    </div>
-                    <a href="#">
-                        <div class="border-bottom border-5" style="padding-left:1rem;border-bottom-color:  #395B64;">
-                            <p class="m-0 p-0">KAMAL</p>
-                            <small class="m-0 p-0 text-muted-color" style="">
-                                Muted text with a
-                            </small>
-                        </div>
-                    </a>
-                </div>
-                <div class="mb-1 py-3 px-2">
-                    <div class="float-left">
-                        <div style="width:40px; height:40px; mx-2">
-                            <img alt="..."
-                                 class="rounded-circle float-left w-100 h-100"
-                                 src="https://mdbootstrap.com/img/Photos/Others/images/76.jpg">
-                        </div>
-                    </div>
-                    <a href="#">
-                        <div class="border-bottom border-5" style="padding-left:1rem;border-bottom-color:  #395B64;">
-                            <p class="m-0 p-0">KAMAL</p>
-                            <small class="m-0 p-0 text-muted-color" style="">
-                                Muted text with a
-                            </small>
-                        </div>
-                    </a>
-                </div>
-                <div class="mb-1 py-3 px-2">
-                    <div class="float-left">
-                        <div style="width:40px; height:40px; mx-2">
-                            <img alt="..."
-                                 class="rounded-circle float-left w-100 h-100"
-                                 src="https://mdbootstrap.com/img/Photos/Others/images/76.jpg">
-                        </div>
-                    </div>
-                    <a href="#">
-                        <div class="border-bottom border-5" style="padding-left:1rem;border-bottom-color:  #395B64;">
-                            <p class="m-0 p-0">KAMAL</p>
-                            <small class="m-0 p-0 text-muted-color" style="">
-                                Muted text with a
-                            </small>
-                        </div>
-                    </a>
-                </div>
-                <div class="mb-1 py-3 px-2">
-                    <div class="float-left">
-                        <div style="width:40px; height:40px; mx-2">
-                            <img alt="..."
-                                 class="rounded-circle float-left w-100 h-100"
-                                 src="https://mdbootstrap.com/img/Photos/Others/images/76.jpg">
-                        </div>
-                    </div>
-                    <a href="#">
-                        <div class="border-bottom border-5" style="padding-left:1rem;border-bottom-color:  #395B64;">
-                            <p class="m-0 p-0">KAMAL</p>
-                            <small class="m-0 p-0 text-muted-color" style="">
-                                Muted text with a
-                            </small>
-                        </div>
-                    </a>
-                </div>
-                <div class="mb-1 py-3 px-2">
-                    <div class="float-left">
-                        <div style="width:40px; height:40px; mx-2">
-                            <img alt="..."
-                                 class="rounded-circle float-left w-100 h-100"
-                                 src="https://mdbootstrap.com/img/Photos/Others/images/76.jpg">
-                        </div>
-                    </div>
-                    <a href="#">
-                        <div class="border-bottom border-5" style="padding-left:1rem;border-bottom-color:  #395B64;">
-                            <p class="m-0 p-0">Maurya</p>
-                            <small class="m-0 p-0 text-muted-color" style="">
-                                Muted text with a
-                            </small>
-                        </div>
-                    </a>
-                </div>
+                {% endif %}
+                {% endfor %}
             </div>
+            <!--Chat List End-->
         </div>
         <div class="bg-dark-color mh-100 px-0 text-light-color d-none d-sm-block col-sm-7 col-md-8 col-lg-9">
             <div class="bg-image "
                  style="background-image: url('https://mdbootstrap.com/img/Photos/Others/images/76.jpg'); max-height: 100vh;min-height: 100vh">
+                {% if chats %}
                 <div class="bg-dark-color text-light-color row w-100 mx-0 py-3 px-2">
                     <div style="width:40px; height:40px;">
                         <img alt="..."
@@ -228,43 +106,45 @@
                              src="https://mdbootstrap.com/img/Photos/Others/images/76.jpg">
                     </div>
                     <div class="" style="padding-left:1rem;">
-                        <p class="m-0 p-0">KAMAL</p>
+                        <p class="m-0 p-0">{{chats.first_name}} {{chats.last_name}}</p>
                         <small class="m-0 p-0 text-muted-color">
                             Muted text with a
                         </small>
                     </div>
-                    <div class="float-right" style="max-width:100%;min-width:80%">
+                    <div class="float-right" style="max-width:80%;min-width:60%">
                         <a class="float-right" href="#">
                             <img src="https://img.icons8.com/ios-glyphs/30/000000/circled-menu.png"/>
                         </a>
                         <a class="float-right" href="#">
                             <img src="https://img.icons8.com/ios-filled/30/2c3333/search-more.png"/>
                         </a>
-                        <!--                    <a target="_blank" href="https://icons8.com/icon/101759/circled-menu">Circled Menu icon by Icons8</a>-->
+                        <!-- <a target="_blank" href="https://icons8.com/icon/101759/circled-menu">Circled Menu icon by Icons8</a>-->
                     </div>
                 </div>
                 <div class="w-100" style="position:fixed;bottom:68px;overflow:scroll; height:76vh;">
                     <h1>bye</h1>
                 </div>
+                <!--footer start -->
                 <div class="bg-dark-color text-light-color row w-100 mx-0 py-3 px-2"
                      style="position: absolute; bottom: 0px;">
                     <a href="dfm">
-                        <div style="width:40px; height:40px;" style="padding-left:5px; max-width:70%;min-width:5%">
+                        <div style="width:40px; height:40px; padding-left:5px; max-width:70%;min-width:5%">
                             <img src="https://img.icons8.com/windows/32/000000/crazy.png"/>
                         </div>
                     </a>
                     <a href="dfm">
-                        <div style="width:40px; height:40px;" style="padding-left:5px; max-width:70%;min-width:5%">
+                        <div style="width:40px; height:40px; padding-left:5px; max-width:70%;min-width:5%">
                             <img src="https://img.icons8.com/windows/32/000000/attach.png"/>
                         </div>
                     </a>
                     <div class="" style="padding-left:1rem; max-width:70%;min-width:80%">
-                        <form action="" method="get">
+                        <form action="home/sendmsg" method="post">
+                            {% csrf_token %}
                             <div class="input-group mb-3">
-                                <input aria-describedby="button-addon2" aria-label="Recipient's username"
+                                <input aria-describedby="sendmsg" aria-label="Recipient's username"
                                        class="form-control bg-dark-color"
-                                       placeholder="Recipient's username" style="" type="text">
-                                <button class="btn btn-outline-secondary" id="button-addon2" type="button">Send</button>
+                                       placeholder="Amount" type="text" name="amount">
+                                <button class="btn btn-outline-secondary" aria-label="send" id="sendmsg" type="submit">Send</button>
                             </div>
                         </form>
                     </div>
@@ -274,7 +154,10 @@
                         </a>
                         <!--<a target="_blank" href="https://icons8.com/icon/101759/circled-menu">Circled Menu icon by Icons8</a>-->
                     </div>
+
                 </div>
+                <!--footer end -->
+                {% endif %}
             </div>
         </div>
     </div>
