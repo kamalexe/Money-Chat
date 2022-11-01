@@ -122,7 +122,7 @@
                     </div>
                 </div>
                 <div class="w-100" style="position:fixed;bottom:68px;overflow:scroll; height:76vh;">
-                    <h1>bye</h1>
+                <h1>bye</h1>
                 </div>
                 <!--footer start -->
                 <div class="bg-dark-color text-light-color row w-100 mx-0 py-3 px-2"
@@ -141,6 +141,8 @@
                         <form action="home/sendmsg" method="post">
                             {% csrf_token %}
                             <div class="input-group mb-3">
+                                <input name="receive_Money" value="{{chats.username}}">
+                                <input name="sender_Name" value="{{user.username}}">
                                 <input aria-describedby="sendmsg" aria-label="Recipient's username"
                                        class="form-control bg-dark-color"
                                        placeholder="Amount" type="text" name="amount">
